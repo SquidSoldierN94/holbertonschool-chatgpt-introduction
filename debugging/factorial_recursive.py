@@ -12,12 +12,9 @@ def factorial(n):
     int: The factorial of the given number.
     """
     if n == 0:
-        return 1  # Base case: the factorial of 0 is 1.
+        return 1
     else:
-        return n * factorial(n-1)  # Recursive case: n * factorial of (n-1).
-
-# Convert the first command-line argument to an integer and compute its factorial.
+        return n * factorial(n-1)
 f = factorial(int(sys.argv[1]))
 
-# Print the calculated factorial.
 print(f)
