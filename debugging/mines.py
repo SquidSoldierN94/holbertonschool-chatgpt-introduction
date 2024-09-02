@@ -14,8 +14,7 @@ class Minesweeper:
         self.revealed_cells = [[False for _ in range(width)] for _ in range(height)]
         self.total_cells = width * height
         self.safe_cells = self.total_cells - mines
-        self.revealed_safe_cells = 0  # Track revealed safe cells
-
+        self.revealed_safe_cells = 0
     def print_board(self, reveal=False):
         clear_screen()
         print('  ' + ' '.join(str(i) for i in range(self.width)))
@@ -46,7 +45,7 @@ class Minesweeper:
         if (y * self.width + x) in self.mines:
             return False
         if self.revealed_cells[y][x]:
-            return True  # Already revealed, do nothing
+            return True
         self.revealed_cells[y][x] = True
         self.revealed_safe_cells += 1
         if self.count_mines_nearby(x, y) == 0:
